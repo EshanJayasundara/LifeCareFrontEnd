@@ -46,18 +46,16 @@ function PublicNavbar() {
             
             {isHomePage && (
                     <>
-                    <Navbar.Text>
                       <Nav.Item>
                         <Link to="/user/signup" className="dropdown-item">
                           <h7 className="nav_topic">Signup</h7>
                         </Link>
                       </Nav.Item>
-                    </Navbar.Text>
-                    <Navbar.Text>
+                      <Nav.Item>
                         <Link to='/signin' className='nav-link'>
                         <h7 className='nav_topic navbar-text-edit'><FiLogIn/> Sign in</h7>
                         </Link>
-                    </Navbar.Text>
+                      </Nav.Item>
                     </>
             )}
           </Navbar.Collapse>
