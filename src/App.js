@@ -43,9 +43,7 @@ function App() {
   };
 
   return (
-    <Router>
-      <div>
-
+    <Router basename="/">
         <Routes>
           <Route exact path='/' element={<Root/>}></Route>
           <Route exact path='/signin' element={<Signin handleFormSubmit={handleFormSubmit}/>}></Route> // signin
@@ -75,30 +73,8 @@ function App() {
           <Route exact path='/medprof/my_patients/appointment/medications' element={<MedicationMedProfPatientAppointment/>}></Route>
           <Route exact path='/medprof/new_medication' element={<NewMedication/>}></Route>
           <Route exact path='/change_username_email_password' element={<ChangeUserNameEmailPassword/>}></Route>
-          
-
           <Route exact path='/test' element={<SessionStorageTest/>}></Route>
-          
-
-          {/* <Route exact path='/appointments' element={<Appoinments/>}></Route> // all appointments
-          
-          <Route exact path='/appointmentDoc' element={<AppointmentDoc/>}></Route> // doctor view of appointments
-          <Route exact path='/managers' element={<Managers/>}></Route> // all managers
-          <Route exact path='/medprofessionals' element={<MedProfessionals/>}></Route> // all medprofs
-          <Route exact path='/medprofManager' element={<MedProfManager/>}></Route> // all med profs managers view
-          <Route exact path='/newAppoinment' element={<NewAppoin/>}></Route> // new appoinment
-          <Route exact path='/register' element={<Register/>}></Route> // need more details from user
-          <Route exact path='/registerManag' element={<RegisterManag/>}></Route> // need more details from manager
-          <Route exact path='/registerDoc' element={<RegisterDoc/>}></Route> // need more details from medprof
-          
-          
-          <Route exact path='/medications' element={<Medications/>}></Route> // all medications
-          <Route exact path='/medicate' element={<MedicatManager/>}></Route> // doctor view of medications 
-          <Route exact path='/medicatManager' element={<MedicatManager/>}></Route> */}
-
           </Routes>
-        
-      </div>
     </Router>
   );
 }
