@@ -42,7 +42,6 @@ function PublicNavbar() {
                   </Link>
                 </NavDropdown.Item>
               </NavDropdown>
-            </Nav>
             
             {isHomePage && (
                     <>
@@ -58,6 +57,7 @@ function PublicNavbar() {
                       </Nav.Item>
                     </>
             )}
+            </Nav>
           </Navbar.Collapse>
         </div>
       </Navbar>
