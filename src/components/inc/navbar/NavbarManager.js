@@ -196,14 +196,14 @@ function CustomNavbar(isSignedIn) {
                       <Link to='/' className='nav-link'>
                         <h7 className='nav_topic navbar-text-edit' onClick={signout}><FiLogOut/> Sign out</h7>
                       </Link>
-                    <Nav.Item>
+                    </Nav.Item>
                     </>
             )}
 
             {isSignedIn && (
                 <Nav.Item>
                 Signed in as: <a href="#profile" onClick={() => setShowOffcanvas(true)}>{fname}</a>
-                <Nav.Item>
+                </Nav.Item>
             )}
           </Navbar.Collapse>
         </div>
