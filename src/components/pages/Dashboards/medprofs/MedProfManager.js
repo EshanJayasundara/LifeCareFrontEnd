@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Container, Button } from 'react-bootstrap';
 import NavbarManager from '../../../inc/navbar/NavbarManager';
 import axios from 'axios';
-import { useEffect, useNavigate } from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function MedProfessionals() {
   const navigate = new useNavigate();
