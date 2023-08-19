@@ -190,18 +190,18 @@ const navAdvanced = () => {
             
             {isHomePage && (
                     <>
-                    <Navbar.Text>
+                    <Nav.Item>
                       <Link to='/' className='nav-link'>
                         <h7 className='nav_topic navbar-text-edit' onClick={signout}><FiLogOut/> Signout</h7>
                       </Link>
-                    </Navbar.Text>
+                    </Nav.Item>
                     </>
             )}
 
             {isSignedIn && (
-                <Navbar.Text>
+                <Nav.Item>
                 Signed in as: <a href="#profile" onClick={() => setShowOffcanvas(true)}>{fname}</a>
-                </Navbar.Text>
+                </Nav.Item>
             )}
           </Navbar.Collapse>
         </div>
