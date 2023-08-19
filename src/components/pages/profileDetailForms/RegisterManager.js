@@ -21,7 +21,8 @@ function RegisterManager() {
     // Refresh the page if user object exists (only once)
     const storedUser = JSON.parse(sessionStorage.getItem('user'));
     if (!storedUser) {
-      window.location.reload();
+      const currentLocation = window.location;
+    navigate(currentLocation.pathname);
     }
 
   useEffect(() => {
