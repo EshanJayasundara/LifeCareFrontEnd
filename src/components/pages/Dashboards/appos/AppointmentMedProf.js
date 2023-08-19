@@ -85,11 +85,7 @@ const handleAccept = async (appointment) => {
     } catch (error) {
       console.error("Error saving appointment:", error);
     }
-<<<<<<< HEAD
     const currentLocation = window.location;
-=======
-  const currentLocation = window.location;
->>>>>>> fda581518bd824f03723f12e04a6c5395f8e8330
     navigate(currentLocation.pathname);
 };
 
