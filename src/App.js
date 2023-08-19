@@ -43,9 +43,7 @@ function App() {
   };
 
   return (
-    <Router>
-      <div>
-
+    <Router basename="https://lifecare-5z1q.onrender.com">
         <Routes>
           <Route exact path='/' element={<Root/>}></Route>
           <Route exact path='/signin' element={<Signin handleFormSubmit={handleFormSubmit}/>}></Route> // signin
@@ -97,8 +95,6 @@ function App() {
           <Route exact path='/medicatManager' element={<MedicatManager/>}></Route> */}
 
           </Routes>
-        
-      </div>
     </Router>
   );
 }
