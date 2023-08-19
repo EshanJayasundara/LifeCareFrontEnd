@@ -43,17 +43,17 @@ function Signin() {
           const isPatient = user.roles[0] === "ROLE_USER";
           const isMedprof = user.roles[0] === "ROLE_MODERATOR";
           const isManager = user.roles[0] === "ROLE_ADMIN";
-          const inPatient = await axios.get("https://lifecare-5z1q.onrender.com/api/v1/patient/findbyuserid/" + user.id, {
+          const inPatient = await axios.get("https://lifecare-5z1q.onrender.com/api/v1/patient/existsbyuserid/" + user.id, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
           });
-          const inMedprof = await axios.get("https://lifecare-5z1q.onrender.com/api/v1/medprof/findbyuserid/" + user.id, {
+          const inMedprof = await axios.get("https://lifecare-5z1q.onrender.com/api/v1/medprof/existsbyuserid/" + user.id, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
           });
-          const inManager = await axios.get("https://lifecare-5z1q.onrender.com/api/v1/manager/findbyuserid/" + user.id, {
+          const inManager = await axios.get("https://lifecare-5z1q.onrender.com/api/v1/manager/existsbyuserid/" + user.id, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
