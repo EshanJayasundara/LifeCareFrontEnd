@@ -89,7 +89,8 @@ const handleDelete = async (medication) => {
     } catch (error) {
       console.error("Error saving medication:", error);
     }
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
 };
 
 const handleBack = () => {
