@@ -47,7 +47,8 @@ export default function MedProfessionals() {
     } catch (error) {
       console.error("Error deleting appointment:", error);
     }
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
   };
 
   return (
