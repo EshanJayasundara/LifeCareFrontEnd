@@ -88,7 +88,8 @@ const AppointmentManager = () => {
     } catch (error) {
       console.error("Error saving appointment:", error);
     }
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
   };
   
 
@@ -111,7 +112,8 @@ const AppointmentManager = () => {
     } catch (error) {
       console.error("Error deleting appointment:", error);
     }
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
   };
 
   const handleAssignDoctor = (id, selectedDoctorId) => {

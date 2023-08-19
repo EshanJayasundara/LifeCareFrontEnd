@@ -93,7 +93,8 @@ const handleAccept = async (appointment) => {
     } catch (error) {
       console.error("Error saving appointment:", error);
     }
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
 };
 
 const handleDeny = async (appointment) => {
@@ -118,7 +119,8 @@ const handleDeny = async (appointment) => {
     } catch (error) {
       console.error("Error saving appointment:", error);
     }
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
 };
 
 const handleMedication = async (appointment) => {

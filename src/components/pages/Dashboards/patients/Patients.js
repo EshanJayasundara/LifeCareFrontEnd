@@ -3,10 +3,11 @@ import { Container, Button } from 'react-bootstrap';
 import NavbarManager from '../../../inc/navbar/NavbarManager';
 import NavbarMedProf from '../../../inc/navbar/NavbarMedProf';
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useNavigate } from 'react';
 import Loader from '../../Loader';
 
 export default function Patient() {
+    const navigate = new useNavigate();
     const [patients, setPatients] = useState([]);
     const [serh, setSerh] = useState('');
     const [isLoading, setIsLoading] = useState(true);
@@ -68,13 +69,15 @@ export default function Patient() {
     } catch (error) {
       console.error("Error deleting appointment:", error);
     }
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
   };
 
   const clear = async () => {
     fetchAllPatients();
     setSerh('');
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
   };
 
   let role;

@@ -11,6 +11,7 @@ import { BiSearch } from 'react-icons/bi';
 import { IconContext } from 'react-icons';
 
 const AppointmentPatient = () => {
+  const navigate = new useNavigate();
   const [searchInput, setSearchInput] = useState('');
   const [appointments, setAppointments] = useState('');
 
@@ -60,10 +61,10 @@ const handleDelete = async (id) => {
   } catch (error) {
     console.error("Error deleting appointment:", error);
   }
-  window.location.reload();
+  const currentLocation = window.location;
+    navigate(currentLocation.pathname);
 };
 
-const navigate = new useNavigate();
 
 useEffect(() => {
   const fetchData = async () => {

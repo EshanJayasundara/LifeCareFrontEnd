@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Container, Button } from 'react-bootstrap';
 import NavbarMedProf from '../../../inc/navbar/NavbarMedProf';
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useNavigate } from 'react';
 
 export default function MedProfMedications() {
+    const navigate = new useNavigate();
     const [medications, setMedications] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -64,7 +65,8 @@ export default function MedProfMedications() {
     } catch (error) {
       console.error("Error deleting medication:", error);
     }
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
   };
 
   return (

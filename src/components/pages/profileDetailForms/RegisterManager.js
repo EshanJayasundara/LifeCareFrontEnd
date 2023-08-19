@@ -4,6 +4,7 @@ import RegisterManagerService from '../../services/RegisterManagerService';
 import { useNavigate } from 'react-router-dom';
 
 function RegisterManager() {
+  const navigate = useNavigate();
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const [formData, setFormData] = useState({
     fname: '',
@@ -21,7 +22,8 @@ function RegisterManager() {
     // Refresh the page if user object exists (only once)
     const storedUser = JSON.parse(sessionStorage.getItem('user'));
     if (!storedUser) {
-      window.location.reload();
+      const currentLocation = window.location;
+    navigate(currentLocation.pathname);
     }
 
   useEffect(() => {
@@ -50,7 +52,6 @@ function RegisterManager() {
     }));
   };
 
-  const navigate = useNavigate();
 
   const registerManager = new RegisterManagerService();
 

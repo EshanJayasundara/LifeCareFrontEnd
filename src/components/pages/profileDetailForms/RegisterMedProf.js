@@ -4,6 +4,7 @@ import RegisterMedProfService from '../../services/RegisterMedProfService';
 import { useNavigate } from 'react-router-dom';
 
 function RegisterMedProf() {
+  const navigate = useNavigate();
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const [formData, setFormData] = useState({
     fname: '',
@@ -21,7 +22,8 @@ function RegisterMedProf() {
     // Refresh the page if user object exists (only once)
     const storedUser = JSON.parse(sessionStorage.getItem('user'));
     if (!storedUser) {
-      window.location.reload();
+      const currentLocation = window.location;
+    navigate(currentLocation.pathname);
     }
 
   useEffect(() => {
@@ -50,7 +52,6 @@ function RegisterMedProf() {
     }));
   };
 
-  const navigate = useNavigate();
 
   const registerMedprof = new RegisterMedProfService();
 

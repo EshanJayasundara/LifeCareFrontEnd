@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Container, Button } from 'react-bootstrap';
 import NavbarManager from '../../../inc/navbar/NavbarManager';
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useNavigate } from 'react';
 
 export default function MedProfessionals() {
+  const navigate = new useNavigate();
   const [medprofs, setMedprofs] = useState([]);
   // API call
   const fetchAllManagers = async () => {
@@ -47,7 +48,8 @@ export default function MedProfessionals() {
     } catch (error) {
       console.error("Error deleting appointment:", error);
     }
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
   };
 
   return (
