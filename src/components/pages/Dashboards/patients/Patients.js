@@ -68,13 +68,15 @@ export default function Patient() {
     } catch (error) {
       console.error("Error deleting appointment:", error);
     }
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
   };
 
   const clear = async () => {
     fetchAllPatients();
     setSerh('');
-    window.location.reload();
+    const currentLocation = window.location;
+    navigate(currentLocation.pathname);
   };
 
   let role;
